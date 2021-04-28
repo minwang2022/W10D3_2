@@ -1,0 +1,15 @@
+
+.gameBoard {
+    display: block;
+    width: 200px;
+    border-style: inset;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    /* flex-wrap: wrap;  */
+}
+/* .tile {
+    display: flex;
+    flex-wrap: wrap; 
+} */

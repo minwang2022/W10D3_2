@@ -4,7 +4,7 @@ import Tile from "./tile"
 
 class Board extends React.Component {
     constructor(props) {
-        debugger
+        // debugger
         super(props)
         this.rowCreator = this.rowCreator.bind(this)
     }
@@ -13,7 +13,7 @@ class Board extends React.Component {
         const newBoard = this.props.board;
         return (newBoard.grid.map( (row, idx) => {
 
-            return (<div key={idx}>{row.map((tile, idx2) => {
+            return (<div className="row" key={idx}>{row.map((tile, idx2) => {
                return (< Tile key ={idx2} tileObj={tile} updateGame={this.props.updateGame} />)
             }
             )}
@@ -22,7 +22,7 @@ class Board extends React.Component {
     }
 
     render  () {
-        debugger;
+        // debugger;
         return (
             <div>
                 {this.rowCreator()}
