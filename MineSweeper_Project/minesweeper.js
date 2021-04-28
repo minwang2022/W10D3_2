@@ -1,3 +1,4 @@
+
 export class Tile {
   constructor(board, pos) {
       this.board = board;
@@ -124,3 +125,4 @@ export class Board {
     return won;
   }
 }
+
