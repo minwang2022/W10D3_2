@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="css/10-posts.css" type="text/css">
   <link rel="stylesheet" href="css/11-icons.css" type="text/css">
   <link rel="stylesheet" href="css/12-modal.css" type="text/css">
+
+  
 </head>
 <body>
 
@@ -232,5 +234,48 @@
 
   </footer>
 
+  <div class="modal">
+    <form class="modal-form" action="">
+      <span id="x-close"class="js-modal-close">&times;</span>
+      <h1 class="modal-title">Welcome</h1>
+      <p>Please sign in to continue.</p>  
+      <br>
+      <div class="input">
+        <label for="form-email">Email</label>
+        <input type="text" id="form-email" value="sennacy@appacademy.io">
+      </div>
+
+      <div class='input'>
+        <label for="form-password">Password</label>
+        <input type="password" id="form-password" value="password">
+      </div>
+
+      <div class='submit'>
+      <button>Sign In</button>
+      <span class="button-alternative">or <strong class="js-modal-close">Cancel</strong></span>
+      </div>
+
+    </form>
+
+    <div class="modal-screen js-modal-close"></div>
+
+  </div>
+  <script src="../shared/js/jquery.js"></script>
+  <script>
+    $(function () {
+
+      $("body").on("click", ".js-modal-open", function (event) {
+        event.preventDefault();
+        $(".modal").addClass("is-open");
+      });
+
+      $("body").on("click", ".js-modal-close", function (event) {
+        event.preventDefault();
+        $(".modal").removeClass("is-open");
+      });
+
+    });
+  </script>
+  
 </body>
 </html>
