@@ -1,5 +1,5 @@
-import React from 'react';
-// import DogIndex from './dog_index';
+import React from 'react'
+import Game from './components/game'
 
 const App = (props) => {
     return (
@@ -7,9 +7,7 @@ const App = (props) => {
         //     <h1>Puppy Survey</h1>
         //     <DogIndex />
         // </div>
-        <div>
-            console.log("hello")
-        </div>
+        < Game/>
     );
 }
 
