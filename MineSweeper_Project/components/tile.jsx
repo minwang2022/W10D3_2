@@ -5,6 +5,7 @@ class Tile extends React.Component {
     constructor(props) {
         super(props)
         this.tileValue = this.tileValue.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     tileValue() {
@@ -12,21 +13,28 @@ class Tile extends React.Component {
         let tileClass;
         if (currTile.explored) {
             if (currTile.bombed) {
-                return ['💣', 'bombed tile'];
+                return ['\u2622', 'bombed tile'];
             } else {
-                return [currTile.adjacentBombCount(), 'revealed tile'];
+                let count = currTile.adjacentBombCount();
+                let look = count > 0 ? `${count} ` : "";
+                return [look, 'revealed tile'];
             }
         } else if (currTile.flagged) {
-            return ['⚑', 'flagged tile']  ;
+            return ['\u2691', 'flagged tile']  ;
         } else {
-            return ['_', 'empty tile'];
+            return ["  ", 'empty tile'];
         }
+    }
+
+    handleClick(event) {
+        // debugger
+        this.props.updateGame(this.props.tileObj, event.altKey)
     }
 
     render  () {
         let value = this.tileValue();
         return (
-            <div className={value[1]}>{value[0]}</div>
+            <div onClick= {this.handleClick} className={value[1]}>{value[0]}</div>
         )
     }
 
